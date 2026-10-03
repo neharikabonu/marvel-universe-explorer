@@ -1,0 +1,88 @@
+.not-found {
+  min-height: 100vh;
+  background: #050505;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 30px;
+}
+
+.not-found-content {
+  max-width: 600px;
+}
+
+.not-found-label {
+  color: #777;
+  font-size: 11px;
+  letter-spacing: 5px;
+  margin-bottom: 20px;
+}
+
+.not-found h1 {
+  font-size: 150px;
+  line-height: 1;
+  color: #222;
+  margin: 0;
+}
+
+.not-found-divider {
+  width: 50px;
+  height: 2px;
+  background: #c62828;
+  margin: 25px auto;
+}
+
+.not-found h2 {
+  font-size: 32px;
+  margin-bottom: 15px;
+}
+
+.not-found-description {
+  color: #888;
+  line-height: 1.7;
+}
+
+.not-found-actions {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 30px;
+}
+
+.not-found-actions button {
+  padding: 12px 20px;
+  border: 1px solid #444;
+  background: transparent;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.not-found-actions button:first-child {
+  background: #c62828;
+  border-color: #c62828;
+}
+
+@media (max-width: 600px) {
+  .not-found h1 {
+    font-size: 100px;
+  }
+
+  .not-found h2 {
+    font-size: 24px;
+  }
+
+  .not-found-description {
+    font-size: 14px;
+  }
+
+  .not-found-actions {
+    flex-direction: column;
+  }
+
+  .not-found-actions button {
+    width: 100%;
+  }
+}

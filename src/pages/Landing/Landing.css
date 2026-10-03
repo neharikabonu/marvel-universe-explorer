@@ -1,0 +1,547 @@
+.landing {
+  min-height: 100vh;
+  background-color: #050505;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.background-layer {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.character {
+  position: absolute;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0;
+  filter: grayscale(15%) brightness(0.9);
+
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    black 15%,
+    black 80%,
+    transparent 100%
+  );
+
+  mask-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    black 15%,
+    black 80%,
+    transparent 100%
+  );
+
+  animation: characterReveal 5s ease forwards;
+}
+
+.character-spider-man {
+  width: 300px;
+  height: 500px;
+  left: 2%;
+  top: 8%;
+  background-image: url('/images/characters/spider-man.png');
+
+  animation-name: characterReveal, spiderFloat;
+  animation-duration: 5s, 8s;
+  animation-fill-mode: forwards, both;
+  animation-timing-function: ease, ease-in-out;
+  animation-iteration-count: 1, infinite;
+  animation-delay: 0.3s, 5.3s;
+}
+
+.character-iron-man {
+  width: 300px;
+  height: 500px;
+  right: 3%;
+  top: 5%;
+  background-image: url('/images/characters/iron-man.png');
+
+  animation-name: characterReveal, ironFloat;
+  animation-duration: 5s, 10s;
+  animation-fill-mode: forwards, both;
+  animation-timing-function: ease, ease-in-out;
+  animation-iteration-count: 1, infinite;
+  animation-delay: 0.8s, 5.8s;
+}
+
+.character-captain-america {
+  width: 270px;
+  height: 470px;
+  left: 18%;
+  top: 10%;
+  background-image: url('/images/characters/captain-america.png');
+  filter: grayscale(20%) brightness(0.75);
+  animation-delay: 1.2s;
+}
+
+.character-thor {
+  width: 340px;
+  height: 550px;
+  left: 36%;
+  bottom: -18%;
+  background-image: url('/images/characters/thor.png');
+  filter: grayscale(20%) brightness(0.8);
+
+  animation-name: characterReveal, thorFloat;
+  animation-duration: 5s, 9s;
+  animation-fill-mode: forwards, both;
+  animation-timing-function: ease, ease-in-out;
+  animation-iteration-count: 1, infinite;
+  animation-delay: 1.6s, 6.6s;
+}
+
+.character-hulk {
+  width: 330px;
+  height: 540px;
+  right: 12%;
+  bottom: -12%;
+  background-image: url('/images/characters/hulk.png');
+  filter: grayscale(20%) brightness(0.7);
+  animation-delay: 2s;
+}
+
+.character-black-widow {
+  width: 250px;
+  height: 440px;
+  left: 20%;
+  bottom: -10%;
+  background-image: url('/images/characters/black-widow.png');
+  filter: grayscale(20%) brightness(0.75);
+  animation-delay: 2.3s;
+}
+
+.character-doctor-strange {
+  width: 280px;
+  height: 480px;
+  right: 48%;
+  top: 4%;
+  background-image: url('/images/characters/doctor-strange.png');
+  filter: grayscale(20%) brightness(0.75);
+  animation-delay: 2.6s;
+}
+
+.character-scarlet-witch {
+  width: 280px;
+  height: 480px;
+  left: 58%;
+  top: -2%;
+  background-image: url('/images/characters/scarlet-witch.png');
+  filter: grayscale(20%) brightness(0.7);
+  animation-delay: 3s;
+}
+
+.dark-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(
+      circle at center,
+      rgba(0, 0, 0, 0.18),
+      rgba(0, 0, 0, 0.68)
+    ),
+    linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.2),
+      rgba(0, 0, 0, 0.45)
+    );
+}
+
+.landing-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  width: 100%;
+  padding: 20px;
+  opacity: 0;
+  animation: titleReveal 2s ease forwards;
+  animation-delay: 4.2s;
+}
+
+.landing h1 {
+  color: #f5f5f5;
+  font-size: 52px;
+  letter-spacing: 6px;
+  line-height: 1.2;
+  text-shadow: 0 0 30px rgba(255, 255, 255, 0.08);
+}
+
+.landing h1 span {
+  display: block;
+  font-size: 24px;
+  letter-spacing: 8px;
+  margin-top: 10px;
+  color: #bdbdbd;
+}
+
+.explore-button {
+  margin: 45px auto 0;
+  background: transparent;
+  border: none;
+  color: #f5f5f5;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  transition: 0.4s ease;
+}
+
+.explore-arrow {
+  font-size: 24px;
+  animation: arrowMove 1.5s ease-in-out infinite;
+  transition: 0.4s ease;
+}
+
+.explore-button span:last-child {
+  font-size: 13px;
+  letter-spacing: 4px;
+  transition: 0.4s ease;
+}
+
+.explore-button:hover {
+  color: white;
+  transform: translateY(-4px);
+}
+
+.explore-button:hover .explore-arrow {
+  transform: translateY(5px) scale(1.15);
+}
+
+.explore-button:hover span:last-child {
+  letter-spacing: 6px;
+}
+
+@keyframes characterReveal {
+  0% {
+    opacity: 0;
+    transform: scale(1.08) translateY(25px);
+  }
+
+  100% {
+    opacity: 0.55;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes titleReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes arrowMove {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(8px);
+  }
+}
+
+@keyframes spiderFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes ironFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(6px);
+  }
+}
+
+@keyframes thorFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+.landing-leaving {
+  animation: landingExit 1.5s ease forwards;
+  pointer-events: none;
+}
+
+@keyframes landingExit {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@media (max-width: 900px) {
+  .character-spider-man {
+    width: 250px;
+    height: 430px;
+    left: -4%;
+    top: 8%;
+  }
+
+  .character-iron-man {
+    width: 250px;
+    height: 430px;
+    right: -4%;
+    top: 6%;
+  }
+
+  .character-captain-america {
+    width: 230px;
+    height: 400px;
+    left: 7%;
+    top: 8%;
+  }
+
+  .character-thor {
+    width: 280px;
+    height: 460px;
+    left: 27%;
+    bottom: -16%;
+  }
+
+  .character-hulk {
+    width: 280px;
+    height: 460px;
+    right: -4%;
+    bottom: -12%;
+  }
+
+  .character-black-widow {
+    width: 210px;
+    height: 370px;
+    left: 8%;
+    bottom: -8%;
+  }
+
+  .character-doctor-strange {
+    width: 230px;
+    height: 400px;
+    right: 38%;
+    top: 4%;
+  }
+
+  .character-scarlet-witch {
+    width: 230px;
+    height: 400px;
+    left: 56%;
+    top: -4%;
+  }
+
+  .landing h1 {
+    font-size: 44px;
+    letter-spacing: 5px;
+  }
+
+  .landing h1 span {
+    font-size: 20px;
+    letter-spacing: 6px;
+  }
+}
+
+@media (max-width: 600px) {
+  .landing {
+    min-height: 100svh;
+  }
+
+  .landing-content {
+    padding: 20px;
+  }
+
+  .landing h1 {
+    font-size: clamp(28px, 9vw, 38px);
+    letter-spacing: 3px;
+    line-height: 1.25;
+  }
+
+  .landing h1 span {
+    font-size: clamp(13px, 4vw, 17px);
+    letter-spacing: 4px;
+    margin-top: 8px;
+  }
+
+  .explore-button {
+    margin-top: 32px;
+    gap: 7px;
+  }
+
+  .explore-arrow {
+    font-size: 21px;
+  }
+
+  .explore-button span:last-child {
+    font-size: 11px;
+    letter-spacing: 3px;
+  }
+
+  .character {
+    background-size: contain;
+  }
+
+  .character-spider-man {
+    width: 175px;
+    height: 310px;
+    left: -18%;
+    top: 8%;
+  }
+
+  .character-iron-man {
+    width: 175px;
+    height: 310px;
+    right: -18%;
+    top: 7%;
+  }
+
+  .character-captain-america {
+    width: 175px;
+    height: 300px;
+    left: -8%;
+    top: 25%;
+  }
+
+  .character-thor {
+    width: 210px;
+    height: 350px;
+    left: 18%;
+    bottom: -12%;
+  }
+
+  .character-hulk {
+    width: 205px;
+    height: 340px;
+    right: -15%;
+    bottom: -8%;
+  }
+
+  .character-black-widow {
+    width: 160px;
+    height: 285px;
+    left: -2%;
+    bottom: -4%;
+  }
+
+  .character-doctor-strange {
+    width: 175px;
+    height: 310px;
+    right: 34%;
+    top: 5%;
+  }
+
+  .character-scarlet-witch {
+    width: 175px;
+    height: 310px;
+    left: 56%;
+    top: 1%;
+  }
+
+  .dark-overlay {
+    background:
+      radial-gradient(
+        circle at center,
+        rgba(0, 0, 0, 0.15),
+        rgba(0, 0, 0, 0.72)
+      ),
+      linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.2),
+        rgba(0, 0, 0, 0.5)
+      );
+  }
+}
+
+@media (max-width: 380px) {
+  .landing h1 {
+    font-size: 27px;
+    letter-spacing: 2px;
+  }
+
+  .landing h1 span {
+    font-size: 12px;
+    letter-spacing: 3px;
+  }
+
+  .explore-button {
+    margin-top: 28px;
+  }
+
+  .character-spider-man {
+    width: 155px;
+    height: 280px;
+    left: -20%;
+  }
+
+  .character-iron-man {
+    width: 155px;
+    height: 280px;
+    right: -20%;
+  }
+
+  .character-captain-america {
+    width: 155px;
+    height: 275px;
+    left: -12%;
+    top: 27%;
+  }
+
+  .character-thor {
+    width: 185px;
+    height: 315px;
+    left: 17%;
+  }
+
+  .character-hulk {
+    width: 180px;
+    height: 300px;
+    right: -18%;
+  }
+
+  .character-black-widow {
+    width: 145px;
+    height: 260px;
+    left: -5%;
+  }
+
+  .character-doctor-strange {
+    width: 155px;
+    height: 275px;
+    right: 33%;
+    top: 7%;
+  }
+
+  .character-scarlet-witch {
+    width: 155px;
+    height: 275px;
+    left: 57%;
+    top: 3%;
+  }
+}
