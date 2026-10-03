@@ -1,3 +1,6 @@
+const imagePath = (fileName) =>
+  `${import.meta.env.BASE_URL}images/characters/${fileName}`
+
 const characters = [
   {
     id: "spider-man",
@@ -5,7 +8,7 @@ const characters = [
     realName: "Peter Parker",
     category: "Heroes",
     teams: ["Avengers"],
-    image: "/images/characters/spider-man.png",
+    image: imagePath("spider-man.png"),
 
     description:
       "A brilliant young hero who uses extraordinary spider abilities and technology to protect others.",
@@ -68,17 +71,18 @@ const characters = [
       "Mary Jane Watson",
       "Gwen Stacy"
     ],
-movies: [
-  "Spider-Man",
-  "Spider-Man 2",
-  "Spider-Man 3",
-  "The Amazing Spider-Man",
-  "The Amazing Spider-Man 2",
-  "Spider-Man: Homecoming",
-  "Spider-Man: Far From Home",
-  "Spider-Man: No Way Home",
-  "Spider-Man: Brand New Day"
-],
+
+    movies: [
+      "Spider-Man",
+      "Spider-Man 2",
+      "Spider-Man 3",
+      "The Amazing Spider-Man",
+      "The Amazing Spider-Man 2",
+      "Spider-Man: Homecoming",
+      "Spider-Man: Far From Home",
+      "Spider-Man: No Way Home",
+      "Spider-Man: Brand New Day"
+    ],
 
     series: [
       "Spider-Man: The Animated Series",
@@ -105,34 +109,34 @@ movies: [
     ],
 
     timelines: {
-  "Tobey Maguire": [
-    "Peter Parker is bitten by a genetically altered spider",
-    "Becomes Spider-Man",
-    "Faces Green Goblin",
-    "Faces Doctor Octopus",
-    "Faces Sandman and Venom"
-  ],
+      "Tobey Maguire": [
+        "Peter Parker is bitten by a genetically altered spider",
+        "Becomes Spider-Man",
+        "Faces Green Goblin",
+        "Faces Doctor Octopus",
+        "Faces Sandman and Venom"
+      ],
 
-  "Andrew Garfield": [
-    "Peter Parker is bitten by a genetically altered spider",
-    "Becomes Spider-Man",
-    "Faces Lizard",
-    "Faces Electro and Green Goblin",
-    "Meets the multiverse Spider-Men"
-  ],
+      "Andrew Garfield": [
+        "Peter Parker is bitten by a genetically altered spider",
+        "Becomes Spider-Man",
+        "Faces Lizard",
+        "Faces Electro and Green Goblin",
+        "Meets the multiverse Spider-Men"
+      ],
 
-  "Tom Holland": [
-    "Peter Parker becomes Spider-Man",
-    "Meets Tony Stark",
-    "Joins the Avengers",
-    "Civil War",
-    "Infinity War",
-    "Endgame",
-    "Far From Home",
-    "No Way Home",
-    "Brand New Day"
-  ]
-},
+      "Tom Holland": [
+        "Peter Parker becomes Spider-Man",
+        "Meets Tony Stark",
+        "Joins the Avengers",
+        "Civil War",
+        "Infinity War",
+        "Endgame",
+        "Far From Home",
+        "No Way Home",
+        "Brand New Day"
+      ]
+    },
 
     relatedCharacters: [
       "iron-man",
@@ -141,7 +145,7 @@ movies: [
     ],
 
     theme: {
-      background: "/images/characters/spider-man-profile.jpg",
+      background: imagePath("spider-man-profile.jpg"),
       accent: "#e23636"
     }
   },
@@ -152,7 +156,7 @@ movies: [
     realName: "Tony Stark",
     category: "Heroes",
     teams: ["Avengers"],
-    image: "/images/characters/iron-man.png",
+    image: imagePath("iron-man.png"),
 
     description:
       "A genius inventor and industrialist who transforms advanced technology into one of the world's most powerful armored suits.",
@@ -261,7 +265,7 @@ movies: [
     ],
 
     theme: {
-      background: "/images/characters/iron-man-profile.jpg",
+      background: imagePath("iron-man-profile.jpg"),
       accent: "#d62828"
     }
   },
@@ -272,8 +276,7 @@ movies: [
     realName: "Steve Rogers",
     category: "Heroes",
     teams: ["Avengers"],
-
-    image: "/images/characters/captain-america.png",
+    image: imagePath("captain-america.png"),
 
     description:
       "A super-soldier whose determination, leadership, and commitment to protecting others made him a central figure among Earth's heroes.",
@@ -378,7 +381,7 @@ movies: [
     ],
 
     theme: {
-      background: "/images/characters/captain-america-profile.jpg",
+      background: imagePath("captain-america-profile.jpg"),
       accent: "#3b82f6"
     }
   },
@@ -389,8 +392,7 @@ movies: [
     realName: "Thor Odinson",
     category: "Heroes",
     teams: ["Avengers"],
-
-    image: "/images/characters/thor.png",
+    image: imagePath("thor.png"),
 
     description:
       "The Asgardian God of Thunder who protects both his home and Earth from powerful threats.",
@@ -495,7 +497,7 @@ movies: [
     ],
 
     theme: {
-      background: "/images/characters/thor-profile.jpg",
+      background: imagePath("thor-profile.jpg"),
       accent: "#60a5fa"
     }
   },
@@ -506,8 +508,7 @@ movies: [
     realName: "Bruce Banner",
     category: "Heroes",
     teams: ["Avengers"],
-
-    image: "/images/characters/hulk.png",
+    image: imagePath("hulk.png"),
 
     description:
       "A brilliant scientist whose exposure to gamma radiation created an extraordinary transformation into the powerful Hulk.",
@@ -616,7 +617,7 @@ movies: [
     ],
 
     theme: {
-      background: "/images/characters/hulk-profile.jpg",
+      background: imagePath("hulk-profile.jpg"),
       accent: "#4ade80"
     }
   },
@@ -627,8 +628,7 @@ movies: [
     realName: "Natasha Romanoff",
     category: "Heroes",
     teams: ["Avengers"],
-
-    image: "/images/characters/black-widow.png",
+    image: imagePath("black-widow.png"),
 
     description:
       "A highly trained spy and elite fighter who became one of the Avengers' most skilled and dependable operatives.",
@@ -730,7 +730,7 @@ movies: [
     ],
 
     theme: {
-      background: "/images/characters/black-widow-profile.jpg",
+      background: imagePath("black-widow-profile.jpg"),
       accent: "#ef4444"
     }
   },
@@ -741,8 +741,7 @@ movies: [
     realName: "Stephen Strange",
     category: "Heroes",
     teams: ["Avengers"],
-
-    image: "/images/characters/doctor-strange.png",
+    image: imagePath("doctor-strange.png"),
 
     description:
       "A former surgeon who becomes a powerful mystic and protector of Earth against supernatural and interdimensional threats.",
@@ -846,7 +845,7 @@ movies: [
     ],
 
     theme: {
-      background: "/images/characters/doctor-strange-profile.jpg",
+      background: imagePath("doctor-strange-profile.jpg"),
       accent: "#a855f7"
     }
   },
@@ -857,8 +856,7 @@ movies: [
     realName: "Wanda Maximoff",
     category: "Heroes",
     teams: ["Avengers"],
-
-    image: "/images/characters/scarlet-witch.png",
+    image: imagePath("scarlet-witch.png"),
 
     description:
       "A powerful wielder of chaos magic whose abilities make her one of the most formidable figures in the Marvel universe.",
@@ -961,7 +959,7 @@ movies: [
     ],
 
     theme: {
-      background: "/images/characters/scarlet-witch-profile.jpg",
+      background: imagePath("scarlet-witch-profile.jpg"),
       accent: "#ec4899"
     }
   }
